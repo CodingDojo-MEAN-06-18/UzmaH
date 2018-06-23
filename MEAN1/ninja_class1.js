@@ -19,7 +19,7 @@
 // ninja1.showStats();
 // // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
 
-function Ninja(name){
+function Ninja(name) {
     var speed = 3;    //private 
     var strength = 3; //private
     this.name = name;
