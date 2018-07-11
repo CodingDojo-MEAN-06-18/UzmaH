@@ -1,11 +1,16 @@
-const express = require("express")
-const path = require("path");
-const port = process.env["PORT"] || 8000;
-const app = express();
+app.use( "/product" , mymiddleware);
+// will match /product
+// will match /product/cool
+// will match /product/foo
 
-app.use(express.static(path.join(__dirname,"static")))
-app.use(express.static(path.join(__dirname,"static","images")))
-// app.use(express.static(__dirname + "/static"))
-app.listen(port,function(){
-    console.log("I am listening on port",port)
-})
+app.all( "/product" , handler);
+// will match /product
+// won't match /product/cool   <-- important
+// won't match /product/foo    <-- important
+
+app.all( "/product/*" , handler);
+// won't match /product        <-- Important
+// will match /product/cool
+// will match /product/foo
+
+2 15 14 25 17 20 18 12 10 2
